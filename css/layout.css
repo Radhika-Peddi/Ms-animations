@@ -1,0 +1,1082 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+.CRM_animations {
+  /************************
+     Blink animation
+************************/
+  /************************
+     Shake animation
+************************/
+  /************************
+     Success message
+************************/
+  /************************
+    slideInDown message
+************************/
+  /************************
+    slideInUp message
+************************/
+  /************************
+    slideInLeft message
+************************/
+  /************************
+    slideInRight message
+************************/
+  /************************
+    fadeIn message
+************************/
+  /************************
+    fadeOut message
+************************/
+  /************************
+    fadeInLeft message
+************************/
+  /************************
+    fadeInRight message
+************************/
+  /************************
+    fadeInDown message
+************************/
+  /************************
+    fadeInUp message
+************************/
+  /*default click animation*/
+}
+.CRM_animations .animate {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.CRM_animations .blink {
+  animation: blink 0.7s steps(2, start) 5;
+  -webkit-animation: blink 0.7s steps(2, start) 5;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+@keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+.CRM_animations .shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 37.5px;
+    opacity: 1;
+  }
+  40% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+  100% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+}
+@-moz-keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 37.5px;
+    opacity: 1;
+  }
+  40% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+  100% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+}
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 37.5px;
+    opacity: 1;
+  }
+  40% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+  100% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+}
+.CRM_animations .slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.CRM_animations .slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.CRM_animations .slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.CRM_animations .slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.CRM_animations .fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.CRM_animations .fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.CRM_animations .fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.CRM_animations .fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.CRM_animations .fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.CRM_animations .fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.CRM_animations a,
+.CRM_animations button,
+.CRM_animations input[type="submit"],
+.CRM_animations [role="button"],
+.CRM_animations [type="button"],
+.CRM_animations div,
+.CRM_animations p,
+.CRM_animations ul,
+.CRM_animations li {
+  transition: all linear 0.5s;
+}
+.CRM_animations .expand {
+  opacity: 1;
+  height: 108px;
+}
+.CRM_animations [ng-show="toggle"] {
+  opacity: 1;
+  height: 108px;
+}
+.CRM_animations .slide-up-on {
+  opacity: 1;
+  height: 2em;
+  margin: 2px 0;
+  padding: 10px;
+}
+.CRM_animations .slide-up-off {
+  opacity: 0;
+  height: 0;
+  margin: 0px 0px;
+  padding: 0px 10px;
+}
+.CRM_animations .show.ng-leave {
+  opacity: 1;
+  height: 2em;
+  margin: 2px 0;
+  padding: 10px;
+}
+.CRM_animations .show.ng-leave.ng-leave-active {
+  opacity: 0;
+  height: 0;
+  margin: 0px 0px;
+  padding: 0px 10px;
+}
+.CRM_animations .show.ng-enter {
+  opacity: 0;
+  height: 0;
+  margin: 0px 0px;
+  padding: 0px 10px;
+}
+.CRM_animations .show.ng-enter.ng-enter-active {
+  opacity: 1;
+  height: 2em;
+  margin: 2px 0;
+  padding: 10px;
+}
+hr {
+  display: block;
+  overflow: hidden;
+  margin: 5px 0;
+  height: 0;
+  border: transparent;
+}
+p {
+  line-height: 22px;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.accordion_crm,
+.dropdown_crm {
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+  position: relative;
+}
+.accordion_crm .accordion-content_crm,
+.dropdown_crm .accordion-content_crm,
+.accordion_crm .dropdown-content_crm,
+.dropdown_crm .dropdown-content_crm {
+  -webkit-transition: max-height 2s;
+  -moz-transition: max-height 2s;
+  -ms-transition: max-height 2s;
+  -o-transition: max-height 2s;
+  transition: max-height 2s;
+  background: #e5feff;
+  overflow: hidden;
+  max-height: 0;
+  background: #ccc;
+}
+.accordion_crm .accordion-content_crm .accordion-inner_crm,
+.dropdown_crm .accordion-content_crm .accordion-inner_crm,
+.accordion_crm .dropdown-content_crm .accordion-inner_crm,
+.dropdown_crm .dropdown-content_crm .accordion-inner_crm,
+.accordion_crm .accordion-content_crm .dropdown-inner_crm,
+.dropdown_crm .accordion-content_crm .dropdown-inner_crm,
+.accordion_crm .dropdown-content_crm .dropdown-inner_crm,
+.dropdown_crm .dropdown-content_crm .dropdown-inner_crm {
+  padding: 15px;
+}
+.accordion_crm .accordion-content_crm .accordion-inner_crm p,
+.dropdown_crm .accordion-content_crm .accordion-inner_crm p,
+.accordion_crm .dropdown-content_crm .accordion-inner_crm p,
+.dropdown_crm .dropdown-content_crm .accordion-inner_crm p,
+.accordion_crm .accordion-content_crm .dropdown-inner_crm p,
+.dropdown_crm .accordion-content_crm .dropdown-inner_crm p,
+.accordion_crm .dropdown-content_crm .dropdown-inner_crm p,
+.dropdown_crm .dropdown-content_crm .dropdown-inner_crm p {
+  margin-bottom: 10px;
+}
+.accordion_crm .dropdown-content_crm,
+.dropdown_crm .dropdown-content_crm {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 99999;
+}
+.accordion_crm .accordion-toggle_crm,
+.dropdown_crm .accordion-toggle_crm,
+.accordion_crm .dropdown-toggle_crm,
+.dropdown_crm .dropdown-toggle_crm {
+  -webkit-transition: background 1s linear;
+  -moz-transition: background 1s linear;
+  -ms-transition: background 1s linear;
+  -o-transition: background 1s linear;
+  transition: background 1s linear;
+  background: #002050;
+  color: #fff;
+  display: block;
+  font-size: 24px;
+  margin: 0;
+  padding: 10px;
+  text-decoration: none;
+}
+.accordion_crm.open .accordion-content_crm,
+.dropdown_crm.open .accordion-content_crm,
+.accordion_crm.open .dropdown-content_crm,
+.dropdown_crm.open .dropdown-content_crm {
+  max-height: 100vh;
+}
+/************************
+   	Success Message
+/***********************/
+.status-container {
+  width: 170px;
+  height: 150px;
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: 38px;
+}
+.status-container .status {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+}
+.status-container .status .shade {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+.status-container .status.success .shade {
+  background: #55d455;
+}
+.status-container .status.success .checkmark.draw:after {
+  -webkit-animation-delay: 1ms;
+  -moz-animation-delay: 1ms;
+  animation-delay: 1ms;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-name: checkmark;
+  -moz-animation-name: checkmark;
+  animation-name: checkmark;
+  -webkit-transform: scaleX(-1) rotate(135deg);
+  -moz-transform: scaleX(-1) rotate(135deg);
+  -ms-transform: scaleX(-1) rotate(135deg);
+  -o-transform: scaleX(-1) rotate(135deg);
+  transform: scaleX(-1) rotate(135deg);
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+.status-container .status.success .checkmark:after {
+  opacity: 0;
+  height: 75px;
+  width: 37.5px;
+  -webkit-transform-origin: left top;
+  -moz-transform-origin: left top;
+  -ms-transform-origin: left top;
+  -o-transform-origin: left top;
+  transform-origin: left top;
+  border-right: 8px solid white;
+  border-top: 8px solid white;
+  border-radius: 0px !important;
+  left: 27%;
+  top: 44%;
+  content: '';
+  position: absolute;
+}
+.status-container .status.error .shade {
+  background: #dd5900;
+}
+.status-container .status.warning .shade {
+  background: #ffb900;
+}
+.status-container .status .value {
+  color: #fff;
+  font-size: 70px;
+  text-align: center;
+  line-height: 150px;
+  position: relative;
+}
+.slideIf_animation {
+  width: 600px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+}
+.slideIf_animation .animationIf {
+  width: 600px;
+  float: left;
+  height: 100%;
+  padding: 15px;
+  color: #212121;
+}
+.slideIf_animation .animationIf2 {
+  width: 600px;
+  float: left;
+  color: #212121;
+  height: 100%;
+  padding: 15px;
+}
+.slideIf_animation .animationIf.ng-enter,
+.slideIf_animation .animationIf.ng-leave {
+  -webkit-transition: all ease-in-out 0.5s;
+  -moz-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+}
+.slideIf_animation .animationIf.ng-enter,
+.slideIf_animation .animationIf.ng-leave.ng-leave-active {
+  margin-left: -100%;
+}
+.slideIf_animation .animationIf.ng-leave,
+.slideIf_animation .animationIf.ng-enter.ng-enter-active {
+  margin-left: 0;
+}
+.slideIf_animation .animationIf2.ng-enter,
+.slideIf_animation .animationIf2.ng-leave {
+  -webkit-transition: all ease-in-out 0.5s;
+  -moz-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+  position: absolute;
+}
+.slideIf_animation .animationIf2.ng-enter,
+.slideIf_animation .animationIf2.ng-leave.ng-leave-active {
+  margin-left: 100%;
+}
+.slideIf_animation .animationIf2.ng-leave,
+.slideIf_animation .animationIf2.ng-enter.ng-enter-active {
+  margin-left: 0;
+}
+.wrapper {
+  margin: 30px 0;
+  width: 400px;
+  display: block;
+  transition: 0.15s ease;
+}
+.wrapper .flip .arrow {
+  transform: rotate(180deg);
+}
+.wrapper ul {
+  padding: 0;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.4s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.wrapper ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+.wrapper ul li:first-child {
+  margin-top: 12px;
+}
+.wrapper ul li:last-child {
+  margin-bottom: 12px;
+}
+.arrow {
+  background: url("../images/arrow-down-icon.png") no-repeat 0 0;
+  width: 18px;
+  height: 18px;
+  background-size: 100% 100%;
+  display: inline-block;
+  transition: 0.4s ease;
+  float: right;
+}
+.click-text {
+  display: block;
+  padding: 0 12px 16px;
+  margin: 0;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: 0.15s ease;
+}
+.click-text:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+.custom-items {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  margin-top: 30px;
+}
+.custom-items ul {
+  list-style: none;
+  display: block;
+  height: auto;
+  overflow: hidden;
+  margin: 0px;
+}
+.custom-items ul li {
+  list-style: none;
+  background: #0072c6;
+  color: #ffffff;
+  height: 0;
+  overflow: hidden;
+  transition: all linear 0.5s;
+}
+.custom-items ul li.show {
+  height: 40px;
+  margin: 2px 0px;
+  padding: 0 10px;
+  width: 250px;
+  line-height: 40px;
+}
+.custom-items ul li.show.ng-leave {
+  opacity: 1;
+  height: 3em;
+  margin: 2px 0;
+  padding: 10px;
+}
+.custom-items ul li.show.ng-leave.ng-leave-active {
+  opacity: 0;
+  height: 0;
+  margin: 0px 0px;
+  padding: 0px 10px;
+}
+.custom-items ul li.show.ng-enter {
+  opacity: 0;
+  height: 0;
+  margin: 0px 0px;
+  padding: 0px 10px;
+}
+.custom-items ul li.show.ng-enter.ng-enter-active {
+  opacity: 1;
+  height: 3em;
+  margin: 2px 0;
+  padding: 10px;
+}
+.block {
+  display: inline-block;
+  overflow: hidden;
+  width: 170px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 24px;
+  color: #ffffff;
+  background: #002050;
+  margin-top: 30px;
+  margin-right: 38px;
+}
+/*********************
+       New layout
+**********************/
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 0px;
+}
+.container-fluid header {
+  height: 60px;
+  line-height: 60px;
+  background: #333333;
+  padding: 0 2%;
+}
+.container-fluid header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+.container-fluid .content {
+  display: block;
+  overflow: hidden;
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+.container-fluid .content .left_section {
+  width: 18%;
+  margin-left: 2%;
+}
+.container-fluid .content .left_section ul {
+  list-style: none;
+  margin-top: 25px;
+}
+.container-fluid .content .left_section ul li {
+  height: 45px;
+  padding-left: 28px;
+  border-left: 2px;
+  line-height: 45px;
+}
+.container-fluid .content .left_section ul li a {
+  font-size: 16px;
+  color: #212121;
+  text-decoration: none;
+  font-weight: bold;
+}
+.container-fluid .content .left_section ul li.active {
+  border-left: 2px solid #007fff;
+}
+.container-fluid .content .left_section ul li.active a {
+  color: #007fff;
+}
+.container-fluid .content .center_section {
+  width: 43%;
+  margin: 0 3.5%;
+  height: calc(100vh - 90px);
+  overflow-y: auto;
+}
+.container-fluid .content .center_section .caterogy {
+  display: block;
+  overflow: hidden;
+}
+.container-fluid .content .center_section .caterogy h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #212121;
+  margin-top: 50px;
+  margin-right: 30px;
+  display: inline-block;
+}
+.container-fluid .content .center_section .caterogy .get_code {
+  text-decoration: none;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #212121;
+  cursor: pointer;
+}
+.container-fluid .content .center_section .caterogy .get_code .icon {
+  font-size: 16px;
+  color: #1f1f2e;
+}
+.container-fluid .content .right_section {
+  width: 26%;
+  margin-right: 4%;
+}
+.container-fluid .content .right_section .search {
+  position: relative;
+  border: 0;
+}
+.container-fluid .content .right_section .search input {
+  border: 0;
+  border-bottom: 1px solid #AAAAAA;
+  width: 100%;
+  padding-right: 40px;
+  padding-left: 5px;
+  background: none;
+  outline: none;
+  height: 30px;
+}
+.container-fluid .content .right_section .search span.icon_search {
+  font-size: 16px;
+  color: #1f1f2e;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+.container-fluid .content .right_section h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #212121;
+  margin-top: 17px;
+  margin-bottom: 19px;
+}
+.container-fluid .content .right_section p {
+  font-size: 12px;
+  color: #212121;
+  margin-bottom: 17px;
+  line-height: 1.5;
+}
+.container-fluid .content .right_section .clipboard {
+  margin-top: 54px;
+}
+body {
+  background: #bdbdbd;
+  font-family: "Segoe UI";
+}
+* {
+  font-family: "Segoe UI";
+}
+.slider-nav {
+  display: block;
+  text-align: right;
+  width: 600px;
+}
+.slider-nav button {
+  height: 30px;
+  line-height: 30px;
+  width: 100px;
+  text-align: center;
+  color: #212121;
+  border: 0;
+  margin: 5px 0px 5px 20px;
+  background: none;
+  outline: none;
+}
+.slider-nav button.active {
+  background: #0c6724;
+  color: #ffffff;
+}
+.bdr {
+  direction: rtl;
+}
+.bdr .slideIf_animation .animationIf.ng-enter,
+.bdr .slideIf_animation .animationIf.ng-leave.ng-leave-active {
+  margin-right: -100%;
+}
+.bdr .slideIf_animation .animationIf.ng-leave,
+.bdr .slideIf_animation .animationIf.ng-enter.ng-enter-active {
+  margin-right: 0;
+}
+.bdr .slideIf_animation .animationIf2.ng-enter,
+.bdr .slideIf_animation .animationIf2.ng-leave.ng-leave-active {
+  margin-right: -100%;
+}
+.bdr .slideIf_animation .animationIf2.ng-leave,
+.bdr .slideIf_animation .animationIf2.ng-enter.ng-enter-active {
+  margin-right: 0;
+}
+textarea {
+  width: 100%;
+  height: 300px;
+  resize: none;
+  padding: 10px;
+}
+button.copy {
+  float: right;
+  color: #1f1f2e;
+  font-size: 20px;
+  background: none;
+  padding: 0;
+  border: 0;
+}
+.selected {
+  border-left: 5px solid #007fff;
+}
+.disclaimer {
+  color: red !important;
+}
+.icon {
+  font-family: "Segoe MDL2 Assets";
+}
+.no-animate {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+.accordion-block {
+  margin-top: 30px;
+}

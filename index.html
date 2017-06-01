@@ -1,0 +1,1112 @@
+<!Doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>CRM POC</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="fonts/Segoe ui mdl2 assets/fonts.css">
+</head>
+
+<body class="CRM_animations" ng-controller="mainCtrl as vm">
+    <div class="container-fluid">
+        <header>
+            <h2>Component Library</h2>
+        </header>
+        <div class="content">
+            <div class="left_section">
+                <h3>Animation Repository</h3>
+                <ul>
+                    <li ng-class="{'active':vm.filter=='all'}"><a href="javascript:void(0)" ng-click="vm.filter='all'; vm.deletetransitionReset();vm.getcode('statusone')" onclick="statusSelected()">All</a>
+                    </li>
+                    <li ng-class="{'active':vm.filter=='status'}"><a href="javascript:void(0)" ng-click="vm.filter='status';vm.getcode('statusone')" onclick="statusSelected()">Status</a>
+                    </li>
+                    <li ng-class="{'active':vm.filter=='fadetransitions'}"><a href="javascript:void(0)" ng-click="vm.filter='fadetransitions';vm.getcode('fadeIn')" onclick="fadeSelected()">Fade Transition</a>
+                    </li>
+                    <li ng-class="{'active':vm.filter=='slidetransitions'}"><a href="javascript:void(0)" ng-click="vm.filter='slidetransitions';vm.getcode('slideInDown')" onclick="slideSelected()">Slide Transition</a>
+                    </li>
+                    <li ng-class="{'active':vm.filter=='carousel'}"><a href="javascript:void(0)" ng-click="vm.filter='carousel';vm.getcode('carousel')">Carousel</a>
+                    </li>
+                    <li ng-class="{'active':vm.filter=='deletetransitions'}"><a href="javascript:void(0)" ng-click="vm.filter='deletetransitions'; vm.deletetransitionReset();vm.getcode('deleteTransition')">Delete Transition</a>
+                    </li>
+                    <li ng-class="{'active':vm.filter=='dropdown'}"><a href="javascript:void(0)" ng-click="vm.filter='dropdown';vm.getcode('dropdown')">Dropdown</a>
+                    </li>
+                    <li ng-class="{'active':vm.filter=='accordion'}"><a href="javascript:void(0)" ng-click="vm.filter='accordion';vm.getcode('accordion')">Accordion</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="center_section">
+                <div class="caterogy no-animate" ng-show="vm.filter=='all' || vm.filter=='status' || vm.filter==''">
+                    <h3>Status</h3>
+                    <span class="get_code" ng-click="vm.filter='status';vm.getcode('statusone')" onclick="statusSelected()">Get Code <i class="icon icon-chevron-right"></i></span>
+                    <br />
+                    <div class="status-container listitem" id="statusFirstElement" ng-click="vm.getcode('statusone'); successClick()"  title="click to see the animation">
+                        <div class="status success">
+                            <div class="shade"></div>
+                            <div class="checkmark draw" id="draw"></div>
+                        </div>
+                    </div>
+                    <div class="status-container listitem" ng-click="vm.getcode('statustwo');errorClick()" title="click to see the animation">
+                        <div class="status error">
+                            <div class="shade"></div>
+                            <div class="value shake" id="shake" ><i class="icon icon-close"></i></div>
+                        </div>
+                    </div>
+                    <div class="status-container listitem" ng-click="vm.getcode('statusthree');warningClick()"  title="click to see the animation">
+                        <div class="status warning">
+                            <div class="shade"></div>
+                            <div class="value blink" id="blink"><i class="icon icon-glyph-340"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="caterogy no-animate" ng-show="vm.filter=='all' || vm.filter=='fadetransitions'  || vm.filter=='fade' || vm.filter==''">
+                    <h3>Fade Transitions</h3>
+                    <span class="get_code" ng-click="vm.filter='fadetransitions';vm.getcode('fadeIn')" onclick="fadeSelected()">Get Code <i class="icon icon-chevron-right"></i></span>
+                    <br />
+                    <div ng-controller="animationsCtrl">
+                        <div class="block listitem"  id="fadeFirstElement" ng-click="vm.getcode('fadeIn'); fadeInClick()"  title="click to see the animation">Fade In</div>
+                        <div class="block listitem" id="fadeOut" ng-click="fadeOut = !fadeOut;vm.getcode('fadeOut'); fadeoutClick()"  title="click to see the animation">Fade Out</div>
+                        <div class="block listitem" id="fadeinLeft" ng-click="fadeInLeft = !fadeInLeft;vm.getcode('fadeInLeft');fadeInLeftClick()"  title="click to see the animation">Fade In Left</div>
+                        <div class="block listitem" id="fadeinRight" ng-click="fadeInRight = !fadeInRightClick();vm.getcode('fadeInRight');fadeInRight"  title="click to see the animation">Fade In Right</div>
+                        <div class="block listitem" id="fadeinUp" ng-click="fadeInUp = !fadeInUp;vm.getcode('fadeInUp');fadeInUpClick()"  title="click to see the animation">Fade In Up</div>
+                        <div class="block listitem" id="fadeinDown" ng-click="fadeInDown = !fadeInDown;vm.getcode('fadeInDown');fadeInDownClick()"  title="click to see the animation">Fade In Down</div>
+                    </div>
+                </div>
+                <div class="caterogy no-animate" ng-show="vm.filter=='all' || vm.filter=='slidetransitions' || vm.filter=='slide' || vm.filter==''">
+                    <h3>Slide Transitions</h3>
+                    <span class="get_code" ng-click="vm.filter='slidetransitions';vm.getcode('slideInDown')" onclick="slideSelected()">Get Code <i class="icon icon-chevron-right"></i></span>
+                    <br />
+                    <div ng-controller="animationsCtrl">
+                        <div class="block listitem" id="slideFirstElement" ng-click="slideInDown = !slideInDown;vm.getcode('slideInDown');slideInDownClick()"  title="click to see the animation">Slide Down</div>
+                        <div class="block listitem" id="slideinUp" ng-click="slideInUp = !slideInUp;vm.getcode('slideInUp');slideInUpClick()"  title="click to see the animation">Slide Up</div>
+                        <div class="block listitem" id="slideinLeft" ng-click="slideInLeft = !slideInLeft;vm.getcode('slideInLeft');slideInLeftClick()"  title="click to see the animation">Slide In Left</div>
+                        <div class="block listitem" id="slideinRight" ng-click="slideInRight = !slideInRight;vm.getcode('slideInRight');slideInRightClick()"  title="click to see the animation">Slide In Right</div>
+                    </div>
+                </div>
+                <div class="caterogy no-animate" ng-controller="animationsCtrl" ng-show="vm.filter=='all' || vm.filter=='carousel' || vm.filter==''">
+                    <div >
+                        <h3>Carousel</h3>
+                        <span class="get_code" ng-click="vm.filter='carousel';vm.getcode('carousel')">Get Code <i class="icon icon-chevron-right"></i></span>
+                        <br />
+                        <div class="slideIf_animation">
+                            
+                            <div ng-if="fadeAnimation" class="animationIf">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                            </div>
+                            <div ng-if="!fadeAnimation" class="animationIf2">
+                                <p>content changes</p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                            </div>
+                        </div>
+                            <div class="slider-nav">    
+                              <button ng-click="fadeAnimation = true" ng-class="{'active' : !fadeAnimation}">Back</button>
+                              <button  ng-click="fadeAnimation = false" ng-class="{'active' : fadeAnimation}">Next</button>
+                             </div>
+                    </div>
+                </div>
+                <div class="caterogy no-animate" ng-show="vm.filter=='all' || vm.filter=='deletetransitions' || vm.filter=='delete' || vm.filter==''">
+                    <h3>Delete Transitions</h3>
+                    <span class="get_code" ng-click="vm.filter='deletetransitions'; vm.deletetransitionReset();vm.getcode('deleteTransition')">Get Code <i class="icon icon-chevron-right"></i></span>
+                    <br />
+                    <div class="custom-items" id="our-list">
+                        <ul class="slide-fade">
+                            <li ng-repeat="item in vm.items" class="show" ng-click="vm.removeItem($index)" ng-bind="item.name"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="caterogy no-animate" ng-show="vm.filter=='all' || vm.filter=='dropdown' || vm.filter==''">
+                    <h3>Dropdown</h3>
+                    <span class="get_code" ng-click="vm.filter='dropdown';vm.getcode('dropdown')">Get Code <i class="icon icon-chevron-right"></i></span>
+                    <br />
+                    <div class="wrapper wrapper1" id="wrapper">
+                        <p class="click-text" ng-click="toggleEffect = !toggleEffect" ng-class="{'flip' :toggleEffect}">
+                            What does Marsellus Wallace not look like? <span class="icon" ng-class="{'icon-chevron-down': !toggleEffect, 'icon-chevron-up': toggleEffect}" style="float:right;"></span>
+                        </p>
+                        <ul ng-class="{'expand' : toggleEffect}">
+                            <li>Black</li>
+                            <li>Bald</li>
+                            <li>A Bitch</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="caterogy no-animate" ng-show="vm.filter=='all' || vm.filter=='accordion' || vm.filter==''">
+                    <h3>Accordion</h3>
+                    <span class="get_code" ng-click="vm.filter='accordion';vm.getcode('accordion')">Get Code <i class="icon icon-chevron-right"></i></span>
+                    <br />
+                    <div class="accordion-block">
+                     <div class="accordion_crm" ng-class="{'open' : toggle}" >
+                     <a href="#" class="accordion-toggle_crm" ng-click="toggle = !toggle" >click for accordion animate</a>
+                     <div class="accordion-content_crm">
+                        <div class="accordion-inner_crm">
+                           <p>For animate the "height" of element with CSS Transitions you need use "max-height".</p>
+                           <p>If use the "height: auto", the effect not works. Is necessary some value for the CSS create a CSS animate, and you can use "max-height" with a great value for emulate this effect.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="accordion_crm" ng-class="{'open' : toggle1}" >
+                     <a href="#" class="accordion-toggle_crm" ng-click="toggle1 = !toggle1" >click for accordion animate</a>
+                     <div class="accordion-content_crm">
+                        <div class="accordion-inner_crm">
+                           <p>For animate the "height" of element with CSS Transitions you need use "max-height".</p>
+                           <p>If use the "height: auto", the effect not works. Is necessary some value for the CSS create a CSS animate, and you can use "max-height" with a great value for emulate this effect.</p>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+            <div class="right_section">
+                <form>
+                    <fieldset class="search">
+                        <input type="text" name="" placeholder="Search here" ng-model="vm.search" ng-keyup="vm.filter = vm.search">
+                        <span class="icon_search"><i class="icon icon-search"></i></span>
+                    </fieldset>
+                </form>
+                <h3>{{vm.title}}</h3>
+                <p>{{vm.description}}</p>
+                <h3 class="disclaimer">{{vm.disclaimer}}</h3>
+                <p>{{vm.note}}</p>
+                <div class="clipboard">
+                    <span>Code</span>
+                    <button ng-click="vm.copy(vm.getcodeID)" class="copy"><i class="icon icon-file-multiple"></i>
+                    </button>
+
+<textarea rows="4" cols="50" id="statusone" ng-show="vm.getcodeID == 'statusone'">
+<div class="status-container">
+  <div class="status success">
+      <div class="shade"></div>
+      <div class="checkmark draw"></div>
+  </div>
+</div>
+<style>
+  .status-container {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      display: inline-block;
+  }
+  .status-container .status {
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      display: inline-block;
+      vertical-align: top;
+  }
+  .status-container .status .shade {
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+  }
+  .status-container .status.success .shade {
+      background: #2EB150;
+  }
+  .status-container .status.success .checkmark.draw:after {
+      -webkit-animation-delay: 1ms;
+      -moz-animation-delay: 1ms;
+      animation-delay: 1ms;
+      -webkit-animation-duration: 2s;
+      -moz-animation-duration: 2s;
+      animation-duration: 2s;
+      -webkit-animation-timing-function: ease;
+      -moz-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-name: checkmark;
+      -moz-animation-name: checkmark;
+      animation-name: checkmark;
+      -webkit-transform: scaleX(-1) rotate(135deg);
+      -moz-transform: scaleX(-1) rotate(135deg);
+      -ms-transform: scaleX(-1) rotate(135deg);
+      -o-transform: scaleX(-1) rotate(135deg);
+      transform: scaleX(-1) rotate(135deg);
+      -webkit-animation-fill-mode: forwards;
+      -moz-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      opacity: 1;
+  }
+  .status-container .status.success .checkmark:after {
+      opacity: 0;
+      height: 75px;
+      width: 37.5px;
+      -webkit-transform-origin: left top;
+      -moz-transform-origin: left top;
+      -ms-transform-origin: left top;
+      -o-transform-origin: left top;
+      transform-origin: left top;
+      border-right: 8px solid white;
+      border-top: 8px solid white;
+      border-radius: 0px !important;
+      left: 27%;
+      top: 44%;
+      content: '';
+      position: absolute;
+  }
+
+  //need to use with combination of success message css
+    
+    @keyframes checkmark {
+        0% {
+            height: 0;
+            width: 0;
+            opacity: 1;
+        }
+        20% {
+            height: 0;
+            width: 37.5px;
+            opacity: 1;
+        }
+        40% {
+            height: 75px;
+            width: 37.5px;
+            opacity: 1;
+        }
+        100% {
+            height: 75px;
+            width: 37.5px;
+            opacity: 1;
+        }
+    }
+</style>
+
+</textarea>
+<textarea rows="4" cols="50" id="statustwo" ng-show="vm.getcodeID == 'statustwo'">
+<div class="status-container">
+  <div class="status error">
+      <div class="shade"></div>
+      <div class="value shake"><i class="icon icon-close"></i></div>
+  </div>
+</div>
+
+<style>
+  .status-container {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      display: inline-block;
+  }
+  .status-container .status {
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      display: inline-block;
+      vertical-align: top;
+  }
+  .status-container .status.error .shade {
+      background: #de0b0b;
+  }
+  .status-container .status .value {
+      color: #fff;
+      font-size: 70px;
+      text-align: center;
+      line-height: 200px;
+      position: relative;
+  }
+  
+  @keyframes shake {
+      from, to {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+      }
+      10%,
+      30%,
+      50%,
+      70%,
+      90% {
+          -webkit-transform: translate3d(-10px, 0, 0);
+          transform: translate3d(-10px, 0, 0);
+      }
+      20%,
+      40%,
+      60%,
+      80% {
+          -webkit-transform: translate3d(10px, 0, 0);
+          transform: translate3d(10px, 0, 0);
+      }
+  }
+  .shake {
+      -webkit-animation-name: shake;
+      animation-name: shake;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+</style>
+</textarea>
+<textarea rows="4" id="statusthree" cols="50" ng-show="vm.getcodeID == 'statusthree'">
+<div class="status-container">
+  <div class="status warning">
+      <div class="shade"></div>
+      <div class="value blink">&oslash;</div>
+  </div>
+</div>
+<style>
+  .status-container {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      display: inline-block;
+  }
+  .status-container .status {
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      display: inline-block;
+      vertical-align: top;
+  }
+  .status-container .status .shade {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  }
+  .status-container .status.warning .shade {
+      background: #de800b;
+  }
+  .status-container .status .value {
+      color: #fff;
+      font-size: 7rem;
+      text-align: center;
+      line-height: 200px;
+      position: relative;
+  }
+  .blink {
+      animation: blink 0.7s steps(2, start) 5;
+      -webkit-animation: blink 0.7s steps(2, start) 5;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+  }
+  @keyframes blink {
+      to {
+          visibility: hidden;
+      }
+  }
+</style>
+
+</textarea>
+<textarea rows="4" cols="50" id="fadeIn" ng-show="vm.getcodeID == 'fadeIn'">
+<div class="block fadeIn">Fade In</div>
+<style>
+  .block {
+      display: inline-block;
+      overflow: hidden;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      color: #ffffff;
+      background: #002050;
+      margin-top: 30px;
+      margin-right: 38px;
+  }
+  .fadeIn {
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: 1;
+      }
+  }
+</style>
+</textarea>
+<textarea rows="4" cols="50" id="fadeOut" ng-if="vm.getcodeID == 'fadeOut'">
+
+<div class="block fadeOut">Fade Out</div>
+<style>
+  .block {
+      display: inline-block;
+      overflow: hidden;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      color: #ffffff;
+      background: #002050;
+      margin-top: 30px;
+      margin-right: 38px;
+  }
+  .fadeOut {
+      -webkit-animation-name: fadeOut;
+      animation-name: fadeOut;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+  @keyframes fadeOut {
+      from {
+          opacity: 1;
+      }
+      to {
+          opacity: 0;
+      }
+  }
+</style>
+
+</textarea>
+<textarea rows="4" cols="50" id="fadeInLeft" ng-show="vm.getcodeID == 'fadeInLeft'">
+
+<div class="block fadeInLeft">Fade In Left</div>
+<style>
+  .block {
+      display: inline-block;
+      overflow: hidden;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      color: #ffffff;
+      background: #002050;
+      margin-top: 30px;
+      margin-right: 38px;
+  }
+  .fadeInLeft {
+      -webkit-animation-name: fadeInLeft;
+      animation-name: fadeInLeft;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+  @keyframes fadeInLeft {
+      from {
+          opacity: 0;
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+      }
+      to {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+      }
+  }
+</style>
+
+</textarea>
+<textarea rows="4" cols="50" id="fadeInRight" ng-show="vm.getcodeID == 'fadeInRight'">
+<div class="block fadeInRight">Fade In Right</div>
+<style>
+  .block {
+      display: inline-block;
+      overflow: hidden;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      color: #ffffff;
+      background: #002050;
+      margin-top: 30px;
+      margin-right: 38px;
+  }
+  .fadeInRight {
+      -webkit-animation-name: fadeInRight;
+      animation-name: fadeInRight;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+  @keyframes fadeInRight {
+      from {
+          opacity: 0;
+          -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+      }
+      to {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+      }
+  }
+</style>
+</textarea>
+<textarea rows="4" cols="50" id="fadeInUp" ng-show="vm.getcodeID == 'fadeInUp'">
+<div class="block fadeInUp">Fade In Up</div>
+<style>
+  .block {
+      display: inline-block;
+      overflow: hidden;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      color: #ffffff;
+      background: #002050;
+      margin-top: 30px;
+      margin-right: 38px;
+  }
+  .fadeInUp {
+      -webkit-animation-name: fadeInUp;
+      animation-name: fadeInUp;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+      }
+      to {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+      }
+  }
+</style>
+</textarea>
+<textarea rows="4" cols="50" id="fadeInDown" ng-show="vm.getcodeID == 'fadeInDown'">
+<div class="block fadeInDown">Fade In Down</div>
+<style>
+  .block {
+      display: inline-block;
+      overflow: hidden;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      color: #ffffff;
+      background: #002050;
+      margin-top: 30px;
+      margin-right: 38px;
+  }
+  .fadeInDown {
+      -webkit-animation-name: fadeInDown;
+      animation-name: fadeInDown;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+  @keyframes fadeInDown {
+      from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+      }
+      to {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+      }
+  }
+</style>
+</textarea>
+<textarea rows="4" cols="50" id="slideInDown" ng-show="vm.getcodeID == 'slideInDown'">
+<div class="block slideInDown">Slide Down</div>
+<style>
+  .block {
+      display: inline-block;
+      overflow: hidden;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      color: #ffffff;
+      background: #002050;
+      margin-top: 30px;
+      margin-right: 38px;
+  }
+  .slideInDown {
+      -webkit-animation-name: slideInDown;
+      animation-name: slideInDown;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+  @keyframes slideInDown {
+      from {
+          -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+          visibility: visible;
+      }
+      to {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+      }
+  }
+</style>
+</textarea>
+<textarea rows="4" cols="50" id="slideInUp" ng-show="vm.getcodeID == 'slideInUp'">
+<div class="block slideInUp">Slide In Up</div>
+<style>
+  .block {
+      display: inline-block;
+      overflow: hidden;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      color: #ffffff;
+      background: #002050;
+      margin-top: 30px;
+      margin-right: 38px;
+  }
+  .slideInUp {
+      -webkit-animation-name: slideInUp;
+      animation-name: slideInUp;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+  @keyframes slideInUp {
+      from {
+          -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+          visibility: visible;
+      }
+      to {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+      }
+  }
+</style>
+</textarea>
+<textarea rows="4" cols="50" id="slideInLeft" ng-show="vm.getcodeID == 'slideInLeft'">
+<div class="block slideInLeft">Slide In Left</div>
+<style>
+  .block {
+      display: inline-block;
+      overflow: hidden;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      color: #ffffff;
+      background: #002050;
+      margin-top: 30px;
+      margin-right: 38px;
+  }
+  .slideInLeft {
+      -webkit-animation-name: slideInLeft;
+      animation-name: slideInLeft;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+  @keyframes slideInLeft {
+      from {
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+          visibility: visible;
+      }
+      to {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+      }
+  }
+</style>
+</textarea>
+<textarea rows="4" cols="50" id="slideInRight" ng-show="vm.getcodeID == 'slideInRight'">
+<div class="block slideInRight">Slide In Right</div>
+<style>
+  .block {
+      display: inline-block;
+      overflow: hidden;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      color: #ffffff;
+      background: #002050;
+      margin-top: 30px;
+      margin-right: 38px;
+  }
+  .slideInRight {
+      -webkit-animation-name: slideInRight;
+      animation-name: slideInRight;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+  @keyframes slideInRight {
+      from {
+          -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+          visibility: visible;
+      }
+      to {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+      }
+  }
+</style>
+</textarea>
+<textarea rows="4" cols="50" id="carousel" ng-show="vm.getcodeID == 'carousel'">
+ <div class="slideIf_animation" ng-controller="animationsCtrl">                            
+<div ng-if="fadeAnimation" class="animationIf">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+</div>
+<div ng-if="!fadeAnimation" class="animationIf2">
+    <p>content changes</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+</div>
+</div>
+<div class="slider-nav">    
+  <button ng-click="fadeAnimation = true" ng-class="{'active' : !fadeAnimation}">Back</button>
+  <button  ng-click="fadeAnimation = false" ng-class="{'active' : fadeAnimation}">Next</button>
+ </div>
+
+<style>
+.slideIf_animation {
+  width: 600px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+}
+.slideIf_animation .animationIf {
+  width: 600px;
+  float: left;
+  height: 100%;
+  padding: 15px;
+  color: #212121;
+}
+.slideIf_animation .animationIf2 {
+  width: 600px;
+  float: left;
+  color: #212121;
+  height: 100%;
+  padding: 15px;
+}
+.slideIf_animation .animationIf.ng-enter,
+.slideIf_animation .animationIf.ng-leave {
+  -webkit-transition: all ease-in-out 0.5s;
+  -moz-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+}
+.slideIf_animation .animationIf.ng-enter,
+.slideIf_animation .animationIf.ng-leave.ng-leave-active {
+  margin-left: -100%;
+}
+.slideIf_animation .animationIf.ng-leave,
+.slideIf_animation .animationIf.ng-enter.ng-enter-active {
+  margin-left: 0;
+}
+.slideIf_animation .animationIf2.ng-enter,
+.slideIf_animation .animationIf2.ng-leave {
+  -webkit-transition: all ease-in-out 0.5s;
+  -moz-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+  position: absolute;
+}
+.slideIf_animation .animationIf2.ng-enter,
+.slideIf_animation .animationIf2.ng-leave.ng-leave-active {
+  margin-left: 100%;
+}
+.slideIf_animation .animationIf2.ng-leave,
+.slideIf_animation .animationIf2.ng-enter.ng-enter-active {
+  margin-left: 0;
+}
+ .slider-nav button {
+  height: 30px;
+  line-height: 30px;
+  width: 100px;
+  text-align: center;
+  color: #212121;
+  border: 0;
+  margin: 5px 0px 5px 20px;
+  background: none;
+  outline: none;
+}
+.slider-nav button.active {
+  background: #0c6724;
+  color: #ffffff;
+}
+</style>
+
+<script>
+
+var myApp = angular.module('myApp', ['ngAnimate'])
+myApp.controller('animationsCtrl', function($scope) {
+  $scope.fadeAnimation = true;
+});
+
+
+</script>
+
+</textarea>
+<textarea rows="4" cols="50" id="deleteTransition" ng-show="vm.getcodeID == 'deleteTransition'">
+<div class="custom-items" id="our-list" ng-controller="mainCtrl as vm">
+    <ul class="slide-fade">
+        <li ng-repeat="item in vm.items" class="show" ng-click="vm.removeItem($index)" ng-bind="item.name"></li>
+    </ul>
+</div>
+<style>
+  
+  .custom-items {
+      display: block;
+      height: auto;
+      overflow: hidden;
+  }
+  .custom-items ul {
+      list-style: none;
+      display: block;
+      height: auto;
+      overflow: hidden;
+      margin: 0px;
+  }
+  .custom-items ul li {
+  list-style: none;
+  background: #0072c6;
+  color: #ffffff;
+  height: 0;
+  overflow: hidden;
+  transition: all linear 0.5s;
+  }
+  .custom-items ul li.show {
+      height: 40px;
+      margin: 2px 0px;
+      padding: 0 10px;
+  }
+  .custom-items ul li.show.ng-leave {
+      opacity: 1;
+      height: 40px;
+      margin: 2px 0;
+      padding: 0 10px;
+
+  }
+  .custom-items ul li.show.ng-leave.ng-leave-active {
+      opacity: 0;
+      height: 0;
+      margin: 0px 0px;
+      padding: 0px 10px;
+  }
+  .custom-items ul li.show.ng-enter {
+      opacity: 0;
+      height: 0;
+      margin: 0px 0px;
+      padding: 0px 10px;
+  }
+  .custom-items ul li.show.ng-enter.ng-enter-active {
+      opacity: 1;
+      height: 3em;
+      margin: 2px 0;
+      padding: 10px;
+  }
+</style>
+
+<script>
+  
+
+var myApp = angular.module('myApp', ['ngAnimate'])
+myApp.controller('mainCtrl', function($scope) {
+  vm = this;
+  vm.filter = 'all';
+  vm.deletetransitionReset =function(){
+    if(vm.filter == 'all' || vm.filter == 'deletetransitions')
+  {vm.items =[
+        {name: "Lunchmeat"},
+        {name: "Bread"},
+        {name: "Milk"},
+        {name: "Mustard"},
+        {name: "Cheese"}
+        ];}
+  }
+   vm.items = [
+        {name: "Lunchmeat"},
+        {name: "Bread"},
+        {name: "Milk"},
+        {name: "Mustard"},
+        {name: "Cheese"}
+        ];
+
+    vm.removeItem = function(index) {   
+
+           vm.items.splice(index, 1);          
+            
+    };
+});
+
+</script>
+</textarea>
+<textarea rows="4" cols="50" id="dropdown" ng-show="vm.getcodeID == 'dropdown'">
+<div class="wrapper wrapper1" id="wrapper">
+  <p class="click-text" ng-click="toggleEffect = !toggleEffect" ng-class="{'flip' :toggleEffect}">
+      What does Marsellus Wallace not look like?
+      <span class="icon icon-chevron-down" ng-class="{'icon-chevron-down': !toggleEffect, 'icon-chevron-up': toggleEffect}" ></span>
+  </p>
+  <ul ng-class="{'expand' : toggleEffect}">
+      <li>Black</li>
+      <li>Bald</li>
+      <li>A Bitch</li>
+  </ul>
+</div>
+
+<style>
+  .click-text {
+      display: block;
+      padding: 0 12px 16px;
+      margin: 0;
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.9);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      transition: 0.15s ease;
+  }
+  .click-text:hover {
+      color: rgba(0, 0, 0, 0.9);
+  }
+  .wrapper {
+      margin: 40px 0;
+      width: 400px;
+      display: block;
+      transition: 0.15s ease;
+  }
+  .wrapper ul {
+      padding: 0;
+      margin: 0;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: 0.4s ease;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  .wrapper ul li {
+      list-style-type: none;
+      margin: 0;
+      padding: 4px 12px;
+      cursor: pointer;
+  }
+  .wrapper ul li:first-child {
+      margin-top: 12px;
+  }
+  .wrapper ul li:last-child {
+      margin-bottom: 12px;
+  }
+  .wrapper ul.expand {
+    opacity: 1;
+    height: 108px;
+  }
+
+</style>
+<script>
+    var myApp = angular.module('myApp', ['ngAnimate'])
+  myApp.controller('animationsCtrl', function($scope) {
+      $scope.dropdown = false;
+      $scope.toggle = false;
+  });
+</script>
+</textarea>
+
+<textarea rows="4" cols="50" id="accordion" ng-show="vm.getcodeID == 'accordion'">
+<div class="accordion_crm" ng-class="{'open' : toggle}" >
+     <a href="#" class="accordion-toggle_crm" ng-click="toggle = !toggle" >click for accordion animate</a>
+     <div class="accordion-content_crm">
+        <div class="accordion-inner_crm">
+           <p>For animate the "height" of element with CSS Transitions you need use "max-height".</p>
+           <p>If use the "height: auto", the effect not works. Is necessary some value for the CSS create a CSS animate, and you can use "max-height" with a great value for emulate this effect.</p>
+        </div>
+     </div>
+  </div>
+  <div class="accordion_crm" ng-class="{'open' : toggle1}" >
+     <a href="#" class="accordion-toggle_crm" ng-click="toggle1 = !toggle1" >click for accordion animate</a>
+     <div class="accordion-content_crm">
+        <div class="accordion-inner_crm">
+           <p>For animate the "height" of element with CSS Transitions you need use "max-height".</p>
+           <p>If use the "height: auto", the effect not works. Is necessary some value for the CSS create a CSS animate, and you can use "max-height" with a great value for emulate this effect.</p>
+        </div>
+     </div>
+  </div>
+
+<style>
+  
+.accordion_crm {
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+  position: relative;
+}
+.accordion_crm .accordion-content_crm {
+  -webkit-transition: max-height 2s;
+  -moz-transition: max-height 2s;
+  -ms-transition: max-height 2s;
+  -o-transition: max-height 2s;
+  transition: max-height 2s;
+  background: #e5feff;
+  overflow: hidden;
+  max-height: 0;
+  background: #ccc;
+}
+.accordion_crm .accordion-content_crm .accordion-inner_crm{
+  padding: 15px;
+}
+.accordion_crm .accordion-content_crm .accordion-inner_crm p{
+  margin-bottom: 10px;
+}
+.accordion_crm .accordion-toggle_crm {
+  -webkit-transition: background 1s linear;
+  -moz-transition: background 1s linear;
+  -ms-transition: background 1s linear;
+  -o-transition: background 1s linear;
+  transition: background 1s linear;
+  background: #002050;
+  color: #fff;
+  display: block;
+  font-size: 24px;
+  margin: 0;
+  padding: 10px;
+  text-decoration: none;
+}
+.accordion_crm.open .accordion-content_crm {
+  max-height: 100vh;
+}
+</style>
+<script>    
+var myApp = angular.module('myApp', [])
+myApp.controller('animationsCtrl', function($scope) {
+  $scope.toggle = false;
+$scope.toggle1 = false;
+});
+</script>
+</textarea>
+                </div>
+            </div>
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+        <script src="js/main.js"></script>
+</body>
+
+</html>
